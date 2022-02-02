@@ -1,0 +1,26 @@
+<html>
+	<head>
+    <title>Ball Game</title>
+	<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body>
+    <div class="head">
+    	<span class="level">Level:</span>
+    	<span class="score">Score:</span>
+    </div>
+    <div>
+		<button id="decrement">-</button>
+		<input type="number" class="textbox" value="1" id="level" />
+		<button id="increment">+</button>
+		<input type="number" class="textbox" value="0" id="score" />
+    </div>
+    <canvas id="tetris" width="139" height="553"></canvas>
+    <div id="control">
+    	<button id="leftarrow">&larr;</button>
+		<button id="downarrow">&darr;</button>
+		<button id="rightarrow">&rarr;</button>
+    </div>
+    <script src="app.js"></script>
+	</body>
+</html>

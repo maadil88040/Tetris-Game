@@ -1,0 +1,82 @@
+
+	body {
+        background-color: rgb(176, 204, 245);
+    }
+
+    #level {
+        display: inline-block;
+        font-size: 14px;
+        width: 50px;
+        background-color: white;
+    }
+
+    .level {
+        font-size: 14px;
+        padding-right: 61px;
+        margin-left: 32px;
+        
+    }
+
+    #score {
+        display: inline-block;
+        font-size: 14px;
+        width: 50px;
+        background-color: white;
+    }
+
+    .score {
+        font-size: 14px;
+    }
+
+    div {
+        font-size: 25px;
+        font-weight: bold;
+        font-family: monospace;
+        text-align: center;
+    }
+
+    #tetris {
+        background-color: white;
+    }
+
+    canvas {
+        display: block;
+        margin: 0 auto;
+        display: flex;
+        border: 3px solid rgb(0, 0, 0);
+    }
+
+    #leftarrow {
+        padding: 2px 14px;
+    }
+
+    #rightarrow {
+        padding: 2px 15px;
+    }
+
+    #downarrow {
+        padding: 2px 20px;
+    }
+    #control{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    #increment {
+        background-color: white;
+    }
+
+    #decrement {
+        background-color: white;
+    }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .head{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
