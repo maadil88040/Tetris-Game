@@ -42,7 +42,7 @@ decrement.addEventListener("click", function () {
 })
 const ROW = 12;
 const COL = COLUMN = 3;
-const SQ = circleSize = 46;
+const S = circleSize = 46;
 const VACANT = "WHITE";
 const radius = 23;
 const YELLOW = "yellow";
@@ -52,7 +52,7 @@ const BLUE = "blue";
 function drawBall(x, y, color) {
     ctx.fillStyle = color;
     ctx.beginPath();
-    ctx.arc((x + 0.5) * SQ, (y + 0.5) * SQ, radius, 0, Math.PI * 2);
+    ctx.arc((x + 0.5) * S, (y + 0.5) * S, radius, 0, Math.PI * 2);
     ctx.fill();
     ctx.strokeStyle = "WHITE";
     ctx.stroke();
@@ -187,7 +187,7 @@ Piece.prototype.lock = function () {
                 Grid[9][c] = VACANT;
                 Grid[10][c] = VACANT;
                 Grid[11][c] = VACANT;
-                score+=10;
+                score+=100;
             }
             if ((Grid[7][c] === color) && (Grid[8][c] === color) && (Grid[9][c] === color)) {
                 Grid[7][c] = VACANT;
