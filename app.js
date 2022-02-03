@@ -170,7 +170,7 @@ Piece.prototype.lock = function () {
                 for (c = 0; c < COL; c++) {
                     Grid[0][c] = VACANT;
                 }
-                score += 100;
+                score += 10;
             }
         }
     }
@@ -187,7 +187,7 @@ Piece.prototype.lock = function () {
                 Grid[9][c] = VACANT;
                 Grid[10][c] = VACANT;
                 Grid[11][c] = VACANT;
-                score+=100;
+                score+=10;
             }
             if ((Grid[7][c] === color) && (Grid[8][c] === color) && (Grid[9][c] === color)) {
                 Grid[7][c] = VACANT;

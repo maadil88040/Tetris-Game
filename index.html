@@ -1,26 +1,28 @@
 <html>
-	<head>
-    <title>Tetris Ball Game</title>
-	<link rel="stylesheet" href="style.css">
-	</head>
 
-	<body>
-    <div class="head">
-    	<span class="level">Level:</span>
-    	<span class="score">Score:</span>
-    </div>
-    <div>
+<head>
+	<title>Tetris Ball Game</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="head">
+		<span class="level">Level:</span>
+		<span class="score">Score:</span>
+	</div>
+	<div>
 		<button id="decrement">-</button>
 		<input type="number" class="textbox" value="1" id="level" />
 		<button id="increment">+</button>
 		<input type="number" class="textbox" value="0" id="score" />
-    </div>
-    <canvas id="tetris" width="139" height="553"></canvas>
-    <div id="control">
-    	<button id="leftarrow"> &#8592;</button>
+	</div>
+	<canvas id="tetris" width="139" height="553"></canvas>
+	<div id="control">
+		<button id="leftarrow"> &#8592;</button>
 		<button id="downarrow"> --</button>
 		<button id="rightarrow">&#8594;</button>
-    </div>
-    <script src="app.js"></script>
-	</body>
+	</div>
+	<script src="app.js"></script>
+</body>
+
 </html>
