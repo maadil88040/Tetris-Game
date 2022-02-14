@@ -2,44 +2,8 @@ const cvs = document.getElementById("tetris");
 const ctx = cvs.getContext("2d");
 const scoreElement = document.getElementById("score");
 let levelElement = document.getElementById("level");
-const increment = document.getElementById("increment");
-var level = 1;
-var timer = 1000;
-increment.addEventListener("click", function () {
-    ++level;
-    if (level >= 4) {
-         level = 4;
-    }
-    if (level == 2) {
-        timer = 600;
-    }
-
-    if (level == 3) {
-        timer = 300;
-    }
-    if (level == 4) {
-        timer = 100;
-    }
-    levelElement.value = level;
-//     console.log("level", level);
-})
-const decrement = document.getElementById("decrement");
-decrement.addEventListener("click", function () {
-    level -= 1;
-    if (level <= 1) {
-        level = 1;
-    }
-    if (level == 2) {
-        timer = 600;
-    }
-    else if (level == 3) {
-        timer = 300;
-    }
-    else if (level == 4) {
-        timer = 1000;
-    }
-    levelElement.value = level;
-})
+let increment = document.getElementById("increment");
+let decrement = document.getElementById("decrement");
 const ROW = 12;
 const COL = COLUMN = 3;
 const S = circleSize = 46;
@@ -49,6 +13,47 @@ const YELLOW = "yellow";
 const PURPLE = "purple";
 const GREEN = "green";
 const BLUE = "blue";
+let level = 1;
+let timer = 1000;
+
+function levelValue(){
+    increment.addEventListener("click", function () {
+            ++level;
+            if (level >= 4) {
+                 level = 4;
+            }
+              else if (level == 2) {
+                timer = 600;
+            }
+        
+               else if (level == 3) {
+                timer = 300;
+            }
+               else if (level == 4) {
+                timer = 100;
+            }
+           
+            levelElement.value = level;
+        })     
+        decrement.addEventListener("click", function () {
+                 level -= 1;
+                if (level <= 1) {
+                        level = 1;
+                    }
+                else if (level == 2) {
+                        timer = 600;
+                    }
+                else if (level == 3) {
+                        timer = 300;
+                    }
+                else if (level == 4) {
+                        timer = 1000;
+                    }
+                    levelElement.value = level;
+                })    
+}
+levelValue();
+ 
 function drawBall(x, y, color) {
     ctx.fillStyle = color;
     ctx.beginPath();
@@ -170,11 +175,14 @@ Piece.prototype.lock = function () {
                 for (c = 0; c < COL; c++) {
                     Grid[0][c] = VACANT;
                 }
-                score += 10;
+                score += 100;
             }
         }
     }
-    checkHorizontal(Grid,YELLOW);
+
+
+    
+
     function checkVertical(Grid, color) {
         for (c = 0; c < COL; ++c) {
             if ((Grid[8][c] === color) && (Grid[9][c] === color) && (Grid[10][c] === color)) {
@@ -239,19 +247,21 @@ Piece.prototype.lock = function () {
             }
         }
     }
-    checkVertical(Grid, YELLOW);
+    
+    checkHorizontal(Grid,YELLOW);
+    checkVertical(Grid,YELLOW)
     drawGrid();
     scoreElement.value = score;
     checkHorizontal(Grid,BLUE);
     checkVertical(Grid,BLUE);
     drawGrid();
     scoreElement.value = score;
-    checkHorizontal(Grid,GREEN);
-    checkVertical(Grid,GREEN);
-    drawGrid();
-    scoreElement.value = score;
     checkHorizontal(Grid,PURPLE);
     checkVertical(Grid,PURPLE);
+    drawGrid();
+    scoreElement.value = score;
+    checkHorizontal(Grid,GREEN);
+    checkVertical(Grid,GREEN);
     drawGrid();
     scoreElement.value = score;
 }
@@ -276,8 +286,8 @@ Piece.prototype.boundaryCheck = function (x, y, piece) {
     }
     return false;
 }
-document.addEventListener("keydown", CONTROL);
-function CONTROL(event) {
+document.addEventListener("keydown", keyControl);
+function keyControl(event) {
     if (event.keyCode == 37) {
         p.moveLeft();
         dropStart = Date.now();
@@ -290,12 +300,12 @@ function CONTROL(event) {
         p.moveDown();
     }
 }
-let leftarrow = document.getElementById("leftarrow");
+let leftArrow = document.getElementById("leftarrow");
 leftarrow.addEventListener("click", () => {
     p.moveLeft();
     dropStart = Date.now();
 });
-let rightarrow = document.getElementById("rightarrow");
+let rightArrow = document.getElementById("rightarrow");
 rightarrow.addEventListener("click", () => {
     p.moveRight();
     dropStart = Date.now();
