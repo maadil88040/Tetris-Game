@@ -1,4 +1,4 @@
-const cvs = document.getElementById("tetris");
+ const cvs = document.getElementById("tetris");
  const ctx = cvs.getContext("2d");
  const scoreElement = document.getElementById("score");
  let levelElement = document.getElementById("level");
@@ -7,7 +7,8 @@ const cvs = document.getElementById("tetris");
  const ROW = 12;
  const COL = COLUMN = 3;
  const S = circleSize = 46;
- const VACANT = "WHITE"; 
+ const VACANT = "WHITE";
+ const radius = 23;
  let level = 1;
  let timer = 1000;
  function levelValue(){
