@@ -10,7 +10,7 @@
  const VACANT = "WHITE";
  const radius = 23;
  let level = 1;
- let timer = 1000;
+ let timer = 100;
  function levelValue(){
      increment.addEventListener("click", function () {
              ++level;
